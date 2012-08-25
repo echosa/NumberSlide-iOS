@@ -25,11 +25,6 @@
     [super tearDown];
 }
 
-//- (void)testExample
-//{
-//    STFail(@"Unit tests are not implemented yet in SlideGameTests");
-//}
-
 - (void)testSettingBoardPositions
 {
     SlideGame* game = [SlideGame alloc];
