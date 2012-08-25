@@ -28,7 +28,6 @@
 - (void)testSettingBoardPositions
 {
     SlideGame* game = [[SlideGame alloc] init];
-    NSLog(@"The game array size is %d", [[game getBoardArray] count]);
     [game setPosition:0 :0 :[NSNumber numberWithInt:100]];
     [game setPosition:1 :0 :[NSNumber numberWithInt:101]];
     [game setPosition:2 :1 :[NSNumber numberWithInt:102]];
@@ -40,10 +39,14 @@
     STAssertEquals(103, [[game getPosition:3 :3] intValue], @"Wrong value");
 }
 
-//- (void)testMovingTiles
-//{
-//    SlideGame* game = [[SlideGame alloc] init];
-    
-//}
+- (void)testMovingTiles
+{
+    SlideGame* game = [[SlideGame alloc] init];
+    [game moveTile:0 :0];
+    STAssertEquals(1, [[game getPosition:0 :0] intValue], @"Wrong value");
+    [game moveTile:3 :2];
+    STAssertEquals(0, [[game getPosition:3 :2] intValue], @"Wrong value");
+    STAssertEquals(15, [[game getPosition:3 :3] intValue], @"Wrong value");
+}
 
 @end

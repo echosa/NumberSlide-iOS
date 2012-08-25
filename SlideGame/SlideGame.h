@@ -20,5 +20,6 @@
 - (NSMutableArray*) getBoardArray;
 - (void) randomizeTiles;
 - (void) moveTile: (NSUInteger)x : (NSUInteger)y;
+- (void) printBoardDebug;
 
 @end

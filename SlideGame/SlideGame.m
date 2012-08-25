@@ -26,7 +26,7 @@
     NSNumber *value;
     for (int x = 0; x < 4; x++) {
         for (int y = 0; y < 4; y++) {
-            value = [NSNumber numberWithInt:x * 10 + y + 1];
+            value = [NSNumber numberWithInt:x * 4 + y + 1];
             [self setPosition:x :y :value];
         }
     }
@@ -56,28 +56,53 @@
 - (void) moveTile: (NSUInteger)x : (NSUInteger) y
 {
     NSNumber *tileValue = [self getPosition:x :y];
+    NSNumber *zero = [NSNumber numberWithInt:0];
     if (tileValue > 0) {
         // check up
-        if (x > 0 && [self getPosition:x - 1 :y] == 0) {
+        if (x > 0 && [[self getPosition:x - 1 :y] intValue] == 0) {
             [self setPosition:x - 1 :y :tileValue];
-            [self setPosition:x :y :0];
+            [self setPosition:x :y :zero];
         }
         // check down
-        if (x < 3 && [self getPosition:x + 1 :y] == 0) {
+        if (x < 3 && [[self getPosition:x + 1 :y] intValue] == 0) {
             [self setPosition:x + 1 :y :tileValue];
-            [self setPosition:x :y :0];
+            [self setPosition:x :y :zero];
         }
         // check left
-        if (y > 0 && [self getPosition:x :y - 1] == 0) {
+        if (y > 0 && [[self getPosition:x :y - 1] intValue] == 0) {
             [self setPosition:x :y - 1 :tileValue];
-            [self setPosition:x :y :0];
+            [self setPosition:x :y :zero];
         }
         // check left
-        if (y < 3 && [self getPosition:x :y + 1] == 0) {
+        if (y < 3 && [[self getPosition:x :y + 1] intValue] == 0) {
             [self setPosition:x :y + 1 :tileValue];
-            [self setPosition:x :y :0];
+            [self setPosition:x :y :zero];
         }
     }
+}
+
+- (void) printBoardDebug
+{
+    NSLog(@"%d %d %d %d",
+          [[self getPosition:0 :0] intValue],
+          [[self getPosition:0 :1] intValue],
+          [[self getPosition:0 :2] intValue],
+          [[self getPosition:0 :3] intValue]);
+    NSLog(@"%d %d %d %d",
+          [[self getPosition:1 :0] intValue],
+          [[self getPosition:1 :1] intValue],
+          [[self getPosition:1 :2] intValue],
+          [[self getPosition:1 :3] intValue]);
+    NSLog(@"%d %d %d %d",
+          [[self getPosition:2 :0] intValue],
+          [[self getPosition:2 :1] intValue],
+          [[self getPosition:2 :2] intValue],
+          [[self getPosition:2 :3] intValue]);
+    NSLog(@"%d %d %d %d",
+          [[self getPosition:3 :0] intValue],
+          [[self getPosition:3 :1] intValue],
+          [[self getPosition:3 :2] intValue],
+          [[self getPosition:3 :3] intValue]);
 }
 
 @end
