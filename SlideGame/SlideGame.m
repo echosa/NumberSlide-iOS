@@ -20,4 +20,9 @@
     return gameArray[x][y];
 }
 
+- (void) randomizeTiles
+{
+    
+}
+
 @end

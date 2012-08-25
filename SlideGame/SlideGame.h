@@ -14,4 +14,5 @@
 }
 - (void) setPosition: (NSInteger)x : (NSInteger)y : (NSInteger)value;
 - (NSInteger) getPosition: (NSInteger)x : (NSInteger)y;
+- (void) randomizeTiles;
 @end

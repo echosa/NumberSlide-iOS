@@ -7,10 +7,7 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
-
-@end
+#import "SlideGame.h"
 
 @implementation ViewController
 
@@ -33,6 +30,18 @@
     } else {
         return YES;
     }
+}
+
+- (IBAction)newGame:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Game!"
+                                                    message:@"Start a new game"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    
+    SlideGame* game = [SlideGame alloc];
+    [game randomizeTiles];
 }
 
 @end
