@@ -10,9 +10,15 @@
 
 @interface SlideGame : NSObject
 {
-    NSInteger gameArray[4][4];
+    NSMutableArray *gameArray;
 }
-- (void) setPosition: (NSInteger)x : (NSInteger)y : (NSInteger)value;
-- (NSInteger) getPosition: (NSInteger)x : (NSInteger)y;
+
+- (id) init;
+- (void) correctTiles;
+- (void) setPosition: (NSUInteger)x : (NSUInteger)y : (NSNumber*)value;
+- (NSNumber*) getPosition: (NSUInteger)x : (NSUInteger)y;
+- (NSMutableArray*) getBoardArray;
 - (void) randomizeTiles;
+- (void) moveTile: (NSUInteger)x : (NSUInteger)y;
+
 @end

@@ -27,19 +27,23 @@
 
 - (void)testSettingBoardPositions
 {
-    SlideGame* game = [SlideGame alloc];
-    int value;
-    for (int x = 0; x < 4; x++) {
-        for (int y = 0; y < 4; y++) {
-            value = 100 + (x * 10 + y);
-            [game setPosition:x :y :value];
-        }
-        
-    }
-    STAssertEquals(100, [game getPosition:0 :0], @"Wrong value");
-    STAssertEquals(110, [game getPosition:1 :0], @"Wrong value");
-    STAssertEquals(121, [game getPosition:2 :1], @"Wrong value");
-    STAssertEquals(133, [game getPosition:3 :3], @"Wrong value");
+    SlideGame* game = [[SlideGame alloc] init];
+    NSLog(@"The game array size is %d", [[game getBoardArray] count]);
+    [game setPosition:0 :0 :[NSNumber numberWithInt:100]];
+    [game setPosition:1 :0 :[NSNumber numberWithInt:101]];
+    [game setPosition:2 :1 :[NSNumber numberWithInt:102]];
+    [game setPosition:3 :3 :[NSNumber numberWithInt:103]];
+    
+    STAssertEquals(100, [[game getPosition:0 :0] intValue], @"Wrong value");
+    STAssertEquals(101, [[game getPosition:1 :0] intValue], @"Wrong value");
+    STAssertEquals(102, [[game getPosition:2 :1] intValue], @"Wrong value");
+    STAssertEquals(103, [[game getPosition:3 :3] intValue], @"Wrong value");
 }
+
+//- (void)testMovingTiles
+//{
+//    SlideGame* game = [[SlideGame alloc] init];
+    
+//}
 
 @end
