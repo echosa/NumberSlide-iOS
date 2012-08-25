@@ -21,6 +21,7 @@
 		7E0912B215E910B700C99F40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E09129015E910B700C99F40 /* Foundation.framework */; };
 		7E0912BA15E910B800C99F40 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E0912B815E910B800C99F40 /* InfoPlist.strings */; };
 		7E0912BD15E910B800C99F40 /* SlideGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0912BC15E910B800C99F40 /* SlideGameTests.m */; };
+		7E0912C815E9213E00C99F40 /* SlideGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E0912C715E9213E00C99F40 /* SlideGame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		7E0912B915E910B800C99F40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7E0912BB15E910B800C99F40 /* SlideGameTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlideGameTests.h; sourceTree = "<group>"; };
 		7E0912BC15E910B800C99F40 /* SlideGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlideGameTests.m; sourceTree = "<group>"; };
+		7E0912C615E9213E00C99F40 /* SlideGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideGame.h; sourceTree = "<group>"; };
+		7E0912C715E9213E00C99F40 /* SlideGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideGame.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				7E0912A615E910B700C99F40 /* ViewController.h */,
 				7E0912A715E910B700C99F40 /* ViewController.m */,
 				7E09129515E910B700C99F40 /* Supporting Files */,
+				7E0912C615E9213E00C99F40 /* SlideGame.h */,
+				7E0912C715E9213E00C99F40 /* SlideGame.m */,
 			);
 			path = SlideGame;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				7E09129B15E910B700C99F40 /* main.m in Sources */,
 				7E09129F15E910B700C99F40 /* AppDelegate.m in Sources */,
 				7E0912A815E910B700C99F40 /* ViewController.m in Sources */,
+				7E0912C815E9213E00C99F40 /* SlideGame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "SlideGameTests.h"
+#import "SlideGame.h"
 
 @implementation SlideGameTests
 
@@ -24,9 +25,26 @@
     [super tearDown];
 }
 
-- (void)testExample
+//- (void)testExample
+//{
+//    STFail(@"Unit tests are not implemented yet in SlideGameTests");
+//}
+
+- (void)testSettingBoardPositions
 {
-    STFail(@"Unit tests are not implemented yet in SlideGameTests");
+    SlideGame* game = [SlideGame alloc];
+    int value;
+    for (int x = 0; x < 4; x++) {
+        for (int y = 0; y < 4; y++) {
+            value = 100 + (x * 10 + y);
+            [game setPosition:x :y :value];
+        }
+        
+    }
+    STAssertEquals(100, [game getPosition:0 :0], @"Wrong value");
+    STAssertEquals(110, [game getPosition:1 :0], @"Wrong value");
+    STAssertEquals(121, [game getPosition:2 :1], @"Wrong value");
+    STAssertEquals(133, [game getPosition:3 :3], @"Wrong value");
 }
 
 @end
