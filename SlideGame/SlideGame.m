@@ -18,6 +18,34 @@
     [gameArray addObject:[NSMutableArray arrayWithCapacity:4]];
     [gameArray addObject:[NSMutableArray arrayWithCapacity:4]];
     [self correctTiles];
+    
+    //correctArray = [NSArray arrayWithArray:gameArray];
+    correctArray = [NSArray arrayWithObjects:
+                    [NSArray arrayWithObjects:
+                     [NSNumber numberWithInt:1],
+                     [NSNumber numberWithInt:2],
+                     [NSNumber numberWithInt:3],
+                     [NSNumber numberWithInt:4],
+                     nil],
+                    [NSArray arrayWithObjects:
+                     [NSNumber numberWithInt:5],
+                     [NSNumber numberWithInt:6],
+                     [NSNumber numberWithInt:7],
+                     [NSNumber numberWithInt:8],
+                     nil],
+                    [NSArray arrayWithObjects:
+                     [NSNumber numberWithInt:9],
+                     [NSNumber numberWithInt:10],
+                     [NSNumber numberWithInt:11],
+                     [NSNumber numberWithInt:12],
+                     nil],
+                    [NSArray arrayWithObjects:
+                     [NSNumber numberWithInt:13],
+                     [NSNumber numberWithInt:14],
+                     [NSNumber numberWithInt:15],
+                     [NSNumber numberWithInt:0],
+                     nil],
+                    nil];
     return self;
 }
 
@@ -48,6 +76,11 @@
     return gameArray;
 }
 
+- (NSArray*) getCorrectArray
+{
+    return correctArray;
+}
+
 - (void) randomizeTiles
 {
     
@@ -58,27 +91,32 @@
     NSNumber *tileValue = [self getPosition:x :y];
     NSNumber *zero = [NSNumber numberWithInt:0];
     if (tileValue > 0) {
-        // check up
+        // move up
         if (x > 0 && [[self getPosition:x - 1 :y] intValue] == 0) {
             [self setPosition:x - 1 :y :tileValue];
             [self setPosition:x :y :zero];
         }
-        // check down
+        // move down
         if (x < 3 && [[self getPosition:x + 1 :y] intValue] == 0) {
             [self setPosition:x + 1 :y :tileValue];
             [self setPosition:x :y :zero];
         }
-        // check left
+        // move left
         if (y > 0 && [[self getPosition:x :y - 1] intValue] == 0) {
             [self setPosition:x :y - 1 :tileValue];
             [self setPosition:x :y :zero];
         }
-        // check left
+        // move right
         if (y < 3 && [[self getPosition:x :y + 1] intValue] == 0) {
             [self setPosition:x :y + 1 :tileValue];
             [self setPosition:x :y :zero];
         }
     }
+}
+
+- (bool) isAWin
+{
+    return [gameArray isEqualToArray:correctArray];
 }
 
 - (void) printBoardDebug

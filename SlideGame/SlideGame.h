@@ -11,6 +11,7 @@
 @interface SlideGame : NSObject
 {
     NSMutableArray *gameArray;
+    NSArray *correctArray;
 }
 
 - (id) init;
@@ -18,8 +19,10 @@
 - (void) setPosition: (NSUInteger)x : (NSUInteger)y : (NSNumber*)value;
 - (NSNumber*) getPosition: (NSUInteger)x : (NSUInteger)y;
 - (NSMutableArray*) getBoardArray;
+- (NSArray*) getCorrectArray;
 - (void) randomizeTiles;
 - (void) moveTile: (NSUInteger)x : (NSUInteger)y;
+- (bool) isAWin;
 - (void) printBoardDebug;
 
 @end
