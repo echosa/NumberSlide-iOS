@@ -205,7 +205,7 @@
 
 - (bool) isAWin
 {
-    return [gameArray isEqualToArray:correctArray];
+    return self.active && [gameArray isEqualToArray:correctArray];
 }
 
 - (void) printBoardDebug
