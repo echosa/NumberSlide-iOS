@@ -57,6 +57,7 @@
 		7E0912BC15E910B800C99F40 /* SlideGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlideGameTests.m; sourceTree = "<group>"; };
 		7E0912C615E9213E00C99F40 /* SlideGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideGame.h; sourceTree = "<group>"; };
 		7E0912C715E9213E00C99F40 /* SlideGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideGame.m; sourceTree = "<group>"; };
+		7E306FF215E9E6BB00409C95 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +87,7 @@
 		7E09127F15E910B700C99F40 = {
 			isa = PBXGroup;
 			children = (
+				7E306FF215E9E6BB00409C95 /* Readme.md */,
 				7E09129415E910B700C99F40 /* SlideGame */,
 				7E0912B515E910B700C99F40 /* SlideGameTests */,
 				7E09128D15E910B700C99F40 /* Frameworks */,
@@ -454,6 +456,7 @@
 				7E0912C215E910B800C99F40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E0912C315E910B800C99F40 /* Build configuration list for PBXNativeTarget "SlideGameTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +465,7 @@
 				7E0912C515E910B800C99F40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
