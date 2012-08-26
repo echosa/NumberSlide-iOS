@@ -20,6 +20,7 @@
 - (NSNumber*) getPosition: (NSUInteger)x : (NSUInteger)y;
 - (NSMutableArray*) getBoardArray;
 - (NSArray*) getCorrectArray;
+- (NSArray*) findTilePosition: (NSInteger)value;
 - (void) randomizeTiles;
 - (void) moveTile: (NSUInteger)x : (NSUInteger)y;
 - (bool) isAWin;

@@ -92,4 +92,11 @@
     STAssertTrue([game isAWin], @"Testing game is a win.");
 }
 
+- (void)testRandomBoard
+{
+    SlideGame* game = [[SlideGame alloc] init];
+    [game randomizeTiles];
+    STAssertFalse([game isAWin], @"Random game should not be a win.");
+}
+
 @end

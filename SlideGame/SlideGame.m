@@ -81,9 +81,88 @@
     return correctArray;
 }
 
+- (NSArray*) findTilePosition: (NSInteger)value
+{
+    int x = -1;
+    int y = -1;
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            if ([[self getPosition:i :j] intValue] == value) {
+                x = i;
+                y = j;
+                break;
+            }
+        }
+        if (x > -1) {
+            break;
+        }
+    }
+    return [NSArray arrayWithObjects:[NSNumber numberWithInt:x],
+                                     [NSNumber numberWithInt:y],
+                                     nil];
+    }
+
 - (void) randomizeTiles
 {
-    
+    [self correctTiles];
+    int numMoves = 100;
+    NSArray* zeroPosition;
+    int x;
+    int y;
+    int lastX = -1;
+    int lastY = -1;
+    int lastX2 = -1;
+    int lastY2 = -1;
+    int chosen;
+    for (int count = 0; count < numMoves; count++) {
+        // find zero
+        zeroPosition = [self findTilePosition:0];
+        x = [[zeroPosition objectAtIndex:0] intValue];
+        y = [[zeroPosition objectAtIndex:1] intValue];
+        // randomly pick tile to move into zero (no backsies)
+        NSMutableArray *choices = [NSMutableArray array];
+        if (x > 0) {
+            [choices addObject:[NSArray arrayWithObjects:
+                                [NSNumber numberWithInt:x - 1],
+                                [NSNumber numberWithInt:y]
+                                ,nil]];
+        }
+        if (x < 3) {
+            [choices addObject:[NSArray arrayWithObjects:
+                                [NSNumber numberWithInt:x + 1],
+                                [NSNumber numberWithInt:y]
+                                ,nil]];
+        }
+        if (y > 0) {
+            [choices addObject:[NSArray arrayWithObjects:
+                                [NSNumber numberWithInt:x],
+                                [NSNumber numberWithInt:y - 1]
+                                ,nil]];
+        }
+        if (y < 3) {
+            [choices addObject:[NSArray arrayWithObjects:
+                                [NSNumber numberWithInt:x],
+                                [NSNumber numberWithInt:y + 1]
+                                ,nil]];
+        }
+        chosen = arc4random() % ([choices count]);
+        while (([[[choices objectAtIndex:chosen] objectAtIndex:0] intValue] == lastX
+                && [[[choices objectAtIndex:chosen] objectAtIndex:1] intValue] == lastY)
+               ||
+               ([[[choices objectAtIndex:chosen] objectAtIndex:0] intValue] == lastX2
+                && [[[choices objectAtIndex:chosen] objectAtIndex:1] intValue] == lastY2)) {
+            chosen = arc4random() % ([choices count]);
+        }
+        x = [[[choices objectAtIndex:chosen] objectAtIndex:0] intValue];
+        y = [[[choices objectAtIndex:chosen] objectAtIndex:1] intValue];
+        
+        // move tile
+        [self moveTile:x :y];
+        lastX2 = lastX;
+        lastY2 = lastY;
+        lastX = x;
+        lastY = y;
+    }
 }
 
 - (void) moveTile: (NSUInteger)x : (NSUInteger) y
@@ -112,6 +191,15 @@
             [self setPosition:x :y :zero];
         }
     }
+//    if ([self isAWin]) {
+//        UIAlertView *someError = [[UIAlertView alloc] initWithTitle: @"Good job!"
+//                                                            message: @"You won!"
+//                                                           delegate: self
+//                                                  cancelButtonTitle: @"Ok"
+//                                                  otherButtonTitles: nil];
+//         
+//         [someError show];
+//    }
 }
 
 - (bool) isAWin
