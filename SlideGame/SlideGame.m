@@ -10,6 +10,8 @@
 
 @implementation SlideGame
 
+@synthesize active;
+
 - (id) init
 {
     gameArray = [NSMutableArray arrayWithCapacity:4];
@@ -46,6 +48,8 @@
                      [NSNumber numberWithInt:0],
                      nil],
                     nil];
+    
+    self.active = false;
     return self;
 }
 
@@ -97,13 +101,16 @@
             break;
         }
     }
-    return [NSArray arrayWithObjects:[NSNumber numberWithInt:x],
-                                     [NSNumber numberWithInt:y],
-                                     nil];
-    }
+    NSArray* positionArray = [NSArray arrayWithObjects:[NSNumber numberWithInt:x],
+                                                       [NSNumber numberWithInt:y],
+                                                       nil];
+    return positionArray;
+}
 
 - (void) randomizeTiles
 {
+    bool isActive = self.active;
+    self.active = true;
     [self correctTiles];
     int numMoves = 100;
     NSArray* zeroPosition;
@@ -163,43 +170,37 @@
         lastX = x;
         lastY = y;
     }
+    self.active = isActive;
 }
 
 - (void) moveTile: (NSUInteger)x : (NSUInteger) y
 {
-    NSNumber *tileValue = [self getPosition:x :y];
-    NSNumber *zero = [NSNumber numberWithInt:0];
-    if (tileValue > 0) {
-        // move up
-        if (x > 0 && [[self getPosition:x - 1 :y] intValue] == 0) {
-            [self setPosition:x - 1 :y :tileValue];
-            [self setPosition:x :y :zero];
-        }
-        // move down
-        if (x < 3 && [[self getPosition:x + 1 :y] intValue] == 0) {
-            [self setPosition:x + 1 :y :tileValue];
-            [self setPosition:x :y :zero];
-        }
-        // move left
-        if (y > 0 && [[self getPosition:x :y - 1] intValue] == 0) {
-            [self setPosition:x :y - 1 :tileValue];
-            [self setPosition:x :y :zero];
-        }
-        // move right
-        if (y < 3 && [[self getPosition:x :y + 1] intValue] == 0) {
-            [self setPosition:x :y + 1 :tileValue];
-            [self setPosition:x :y :zero];
+    if (self.active) {
+        NSNumber *tileValue = [self getPosition:x :y];
+        NSNumber *zero = [NSNumber numberWithInt:0];
+        if (tileValue > 0) {
+            // move up
+            if (x > 0 && [[self getPosition:x - 1 :y] intValue] == 0) {
+                [self setPosition:x - 1 :y :tileValue];
+                [self setPosition:x :y :zero];
+            }
+            // move down
+            if (x < 3 && [[self getPosition:x + 1 :y] intValue] == 0) {
+                [self setPosition:x + 1 :y :tileValue];
+                [self setPosition:x :y :zero];
+            }
+            // move left
+            if (y > 0 && [[self getPosition:x :y - 1] intValue] == 0) {
+                [self setPosition:x :y - 1 :tileValue];
+                [self setPosition:x :y :zero];
+            }
+            // move right
+            if (y < 3 && [[self getPosition:x :y + 1] intValue] == 0) {
+                [self setPosition:x :y + 1 :tileValue];
+                [self setPosition:x :y :zero];
+            }
         }
     }
-//    if ([self isAWin]) {
-//        UIAlertView *someError = [[UIAlertView alloc] initWithTitle: @"Good job!"
-//                                                            message: @"You won!"
-//                                                           delegate: self
-//                                                  cancelButtonTitle: @"Ok"
-//                                                  otherButtonTitles: nil];
-//         
-//         [someError show];
-//    }
 }
 
 - (bool) isAWin

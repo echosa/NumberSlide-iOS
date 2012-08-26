@@ -14,6 +14,8 @@
     NSArray *correctArray;
 }
 
+@property bool active;
+
 - (id) init;
 - (void) correctTiles;
 - (void) setPosition: (NSUInteger)x : (NSUInteger)y : (NSNumber*)value;

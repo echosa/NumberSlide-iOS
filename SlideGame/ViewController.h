@@ -10,5 +10,6 @@
 
 @interface ViewController : UIViewController
 - (IBAction)newGame:(id)sender;
+- (IBAction)pushTile:(id)sender;
 
 @end

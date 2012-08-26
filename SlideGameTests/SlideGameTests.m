@@ -11,10 +11,12 @@
 
 @implementation SlideGameTests
 
+SlideGame* game;
+
 - (void)setUp
 {
     [super setUp];
-    
+    game = [[SlideGame alloc] init];
     // Set-up code here.
 }
 
@@ -27,7 +29,6 @@
 
 - (void)testSettingBoardPositions
 {
-    SlideGame* game = [[SlideGame alloc] init];
     [game setPosition:0 :0 :[NSNumber numberWithInt:100]];
     [game setPosition:1 :0 :[NSNumber numberWithInt:101]];
     [game setPosition:2 :1 :[NSNumber numberWithInt:102]];
@@ -41,8 +42,7 @@
 
 - (void)testMovingTiles
 {
-    SlideGame* game = [[SlideGame alloc] init];
-
+    game.active = true;
     [game moveTile:0 :0];
     STAssertEquals(1, [[game getPosition:0 :0] intValue], @"Wrong value");
 
@@ -82,9 +82,27 @@
     STAssertEquals(12, [[game getPosition:2 :3] intValue], @"Wrong value");
 }
 
+- (void)testFindingBoardPositions
+{
+    NSArray* position;
+    
+    position = [game findTilePosition:1];
+    STAssertEquals(0, [[position objectAtIndex:0] intValue], @"Checking x position of 0");
+    STAssertEquals(0, [[position objectAtIndex:1] intValue], @"Checking y position of 0");
+
+    position = [game findTilePosition:15];
+    STAssertEquals(3, [[position objectAtIndex:0] intValue], @"Checking x position of 0");
+    STAssertEquals(2, [[position objectAtIndex:1] intValue], @"Checking y position of 0");
+    
+    position = [game findTilePosition:0];
+    STAssertEquals(3, [[position objectAtIndex:0] intValue], @"Checking x position of 0");
+    STAssertEquals(3, [[position objectAtIndex:1] intValue], @"Checking y position of 0");
+    
+}
+
 - (void)testWinningBoard
 {
-    SlideGame* game = [[SlideGame alloc] init];
+    game.active = true;
     STAssertTrue([game isAWin], @"Testing game is initially a win.");
     [game moveTile:3 :2];
     STAssertFalse([game isAWin], @"Testing game is not a win.");
@@ -94,7 +112,7 @@
 
 - (void)testRandomBoard
 {
-    SlideGame* game = [[SlideGame alloc] init];
+    game.active = true;
     [game randomizeTiles];
     STAssertFalse([game isAWin], @"Random game should not be a win.");
 }

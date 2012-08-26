@@ -11,6 +11,8 @@
 
 @implementation ViewController
 
+SlideGame* game;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -34,24 +36,32 @@
 
 - (IBAction)newGame:(id)sender
 {
-//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"New Game!"
-//                                                    message:@"Start a new game"
-//                                                   delegate:nil
-//                                          cancelButtonTitle:@"OK"
-//                                          otherButtonTitles:nil];
-//    [alert show];
-    
-    SlideGame* game = [[SlideGame alloc] init];
+    game = [[SlideGame alloc] init];
     [game randomizeTiles];
-    [self printBoard:game];
-//    UIButton* button = (UIButton *)[self.view viewWithTag:15];
-//    int top = 3 * 70 + 90;
-//    int left = 3 * 70 + 20;
-//    CGRect rect = CGRectMake(left, top, 70, 70);
-//    [button setFrame:rect];
+    [self printBoard];
+    game.active = true;
 }
 
-- (void)printBoard:(SlideGame*)game
+- (IBAction)pushTile:(id)sender
+{
+    NSArray* position = [game findTilePosition:[sender tag]];
+    [game moveTile:[[position objectAtIndex:0] intValue]
+                  :[[position objectAtIndex:1] intValue]];
+    [self printBoard];
+
+    if ([game isAWin]) {
+        UIAlertView *win = [[UIAlertView alloc] initWithTitle: @"Good job!"
+                                                      message: @"You won!"
+                                                     delegate: self
+                                            cancelButtonTitle: @"Ok"
+                                            otherButtonTitles: nil];
+
+         [win show];
+        game.active = false;
+    }
+}
+
+- (void)printBoard
 {
     int tile;
     UIButton* button;

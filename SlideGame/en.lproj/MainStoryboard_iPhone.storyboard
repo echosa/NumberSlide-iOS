@@ -43,6 +43,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushTile:" destination="2" eventType="touchUpInside" id="aOW-TV-MM1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="elq-At-hSl" userLabel="Button2">
                                 <rect key="frame" x="90" y="90" width="70" height="70"/>
@@ -55,6 +58,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushTile:" destination="2" eventType="touchUpInside" id="SlC-DQ-3Aa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SLf-m4-E5e" userLabel="Button3">
                                 <rect key="frame" x="160" y="90" width="70" height="70"/>
@@ -67,6 +73,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushTile:" destination="2" eventType="touchUpInside" id="c4I-Jb-bl2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iYL-ye-FA8" userLabel="Button4">
                                 <rect key="frame" x="230" y="90" width="70" height="70"/>
@@ -79,6 +88,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushTile:" destination="2" eventType="touchUpInside" id="UgD-di-s4h"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="l48-l7-OB7" userLabel="Button5">
                                 <rect key="frame" x="20" y="160" width="70" height="70"/>
@@ -91,6 +103,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushTile:" destination="2" eventType="touchUpInside" id="SEf-re-KF7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mVy-iR-vEd" userLabel="Button6">
                                 <rect key="frame" x="90" y="160" width="70" height="70"/>
@@ -103,6 +118,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushTile:" destination="2" eventType="touchUpInside" id="jq6-QV-Ack"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sUp-OS-Y2R" userLabel="Button7">
                                 <rect key="frame" x="160" y="160" width="70" height="70"/>
@@ -115,6 +133,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushTile:" destination="2" eventType="touchUpInside" id="W3O-Tc-z9B"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vyh-aX-yNs" userLabel="Button8">
                                 <rect key="frame" x="230" y="160" width="70" height="70"/>
@@ -127,6 +148,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushTile:" destination="2" eventType="touchUpInside" id="bhS-4N-YbC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OBF-0A-hUR" userLabel="Button9">
                                 <rect key="frame" x="20" y="230" width="70" height="70"/>
@@ -139,6 +163,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushTile:" destination="2" eventType="touchUpInside" id="bEY-gC-SMQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pql-ow-NIz" userLabel="Button10">
                                 <rect key="frame" x="90" y="230" width="70" height="70"/>
@@ -151,6 +178,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushTile:" destination="2" eventType="touchUpInside" id="UvY-Yb-FgS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="LVs-ln-3Bv" userLabel="Button11">
                                 <rect key="frame" x="160" y="230" width="70" height="70"/>
@@ -163,6 +193,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushTile:" destination="2" eventType="touchUpInside" id="Naw-xn-ru1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QdD-Qo-oA4" userLabel="Button12">
                                 <rect key="frame" x="230" y="230" width="70" height="70"/>
@@ -175,6 +208,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushTile:" destination="2" eventType="touchUpInside" id="Gv1-nc-L3o"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="WKO-qc-b94" userLabel="Button13">
                                 <rect key="frame" x="20" y="300" width="70" height="70"/>
@@ -187,6 +223,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushTile:" destination="2" eventType="touchUpInside" id="gGi-3M-ElY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oad-ef-DmU" userLabel="Button14">
                                 <rect key="frame" x="90" y="300" width="70" height="70"/>
@@ -199,6 +238,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushTile:" destination="2" eventType="touchUpInside" id="U6G-kx-4qW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Fhk-2Y-jRM" userLabel="Button15">
                                 <rect key="frame" x="160" y="300" width="70" height="70"/>
@@ -211,6 +253,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pushTile:" destination="2" eventType="touchUpInside" id="axk-05-hyT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -224,6 +269,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
             <relationships>
                 <relationship kind="action" name="newGame:"/>
+                <relationship kind="action" name="pushTile:"/>
             </relationships>
         </class>
     </classes>
